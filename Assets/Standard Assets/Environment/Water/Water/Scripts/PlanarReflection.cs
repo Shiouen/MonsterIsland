@@ -16,7 +16,7 @@ namespace UnityStandardAssets.Water
 
 
         Vector3 m_Oldpos;
-        Camera m_ReflectionCamera;
+        // Camera m_ReflectionCamera;
         Material m_SharedMaterial;
         Dictionary<Camera, bool> m_HelperCameras;
 
@@ -89,12 +89,14 @@ namespace UnityStandardAssets.Water
                 return;
             }
 
+            /*
             if (!m_ReflectionCamera)
             {
                 m_ReflectionCamera = CreateReflectionCameraFor(currentCam);
             }
+            */
 
-            RenderReflectionFor(currentCam, m_ReflectionCamera);
+            //RenderReflectionFor(currentCam, m_ReflectionCamera);
 
             m_HelperCameras[currentCam] = true;
         }
@@ -113,10 +115,12 @@ namespace UnityStandardAssets.Water
         {
             RenderHelpCameras(currentCam);
 
+            /*
             if (m_ReflectionCamera && m_SharedMaterial)
             {
                 m_SharedMaterial.SetTexture(reflectionSampler, m_ReflectionCamera.targetTexture);
             }
+            */
         }
 
 
